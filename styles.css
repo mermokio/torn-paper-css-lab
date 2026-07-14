@@ -1,0 +1,503 @@
+:root {
+  --ink: #2f241d;
+  --paper: #f4ead9;
+  --accent-deep: #6f2518;
+  --shadow: rgba(57, 34, 24, 0.16);
+  --grain:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.5) 0 1px, transparent 1px 100%),
+    radial-gradient(circle at 80% 35%, rgba(110, 73, 48, 0.16) 0 1px, transparent 1px 100%),
+    radial-gradient(circle at 40% 75%, rgba(110, 73, 48, 0.12) 0 1px, transparent 1px 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, rgba(255, 252, 246, 0.9), transparent 45%),
+    linear-gradient(180deg, #f8f0e3 0%, #efdfc7 100%);
+  font-family: "Cormorant Garamond", serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: var(--grain);
+  background-size: 180px 180px, 240px 240px, 220px 220px;
+}
+
+.paper-site {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0 4rem;
+}
+
+.eyebrow,
+.section-label,
+.effect-tag,
+.ingredients-list {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.eyebrow,
+.section-label {
+  margin: 0 0 0.75rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.hero h1,
+.section-heading h2 {
+  margin: 0;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 {
+  max-width: 11ch;
+  font-size: clamp(3.4rem, 8vw, 6.8rem);
+}
+
+.intro {
+  max-width: 34rem;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.hero-collage {
+  position: relative;
+  min-height: 27rem;
+}
+
+.scrap {
+  position: absolute;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  padding: 1.25rem;
+  box-shadow: 0 22px 45px var(--shadow);
+  background-image: var(--grain), linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(237, 218, 190, 0.96));
+  background-size: 160px 160px, cover;
+}
+
+.scrap span {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 0.9;
+}
+
+.scrap-a {
+  top: 0;
+  right: 1rem;
+  width: 64%;
+  height: 14rem;
+  transform: rotate(6deg);
+  border-radius: 18px 12px 26px 14px;
+  clip-path: polygon(0 6%, 100% 0, 100% 84%, 93% 92%, 84% 87%, 72% 96%, 58% 88%, 44% 97%, 30% 89%, 14% 95%, 0 86%);
+}
+
+.scrap-b {
+  top: 8rem;
+  left: 0;
+  width: 62%;
+  height: 11.5rem;
+  transform: rotate(-8deg);
+  background-image:
+    linear-gradient(90deg, rgba(173, 63, 38, 0.22), rgba(173, 63, 38, 0) 20%),
+    var(--grain),
+    linear-gradient(180deg, rgba(244, 226, 197, 0.97), rgba(219, 189, 148, 0.98));
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 86% 89%, 69% 100%, 51% 88%, 34% 99%, 16% 90%, 0 100%);
+}
+
+.scrap-c {
+  right: 0;
+  bottom: 0.5rem;
+  width: 56%;
+  height: 10.75rem;
+  transform: rotate(3deg);
+  clip-path: polygon(0 8%, 9% 0, 100% 0, 100% 100%, 92% 94%, 80% 100%, 68% 92%, 55% 100%, 42% 91%, 28% 100%, 14% 90%, 0 96%);
+}
+
+.scrap-c::after {
+  content: "";
+  position: absolute;
+  right: 1.5rem;
+  bottom: -0.5rem;
+  width: 4rem;
+  height: 3rem;
+  background: linear-gradient(135deg, rgba(173, 133, 93, 0.3), rgba(255, 255, 255, 0.85));
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.pin {
+  position: absolute;
+  top: 5.5rem;
+  left: 48%;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fff9ef 0, #d29a6e 35%, #8f452b 100%);
+  box-shadow: 0 10px 18px rgba(83, 41, 25, 0.28);
+}
+
+.gallery-section,
+.textures-section,
+.recipe-section {
+  margin-top: 2.5rem;
+}
+
+.section-heading {
+  display: grid;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+}
+
+.section-heading h2 {
+  max-width: 14ch;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+}
+
+.effects-grid,
+.textures-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.effects-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.textures-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.effect-card,
+.texture-chip,
+.ingredients-list li {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(101, 68, 46, 0.15);
+  background: rgba(255, 248, 237, 0.86);
+  box-shadow: 0 18px 35px rgba(83, 55, 35, 0.08);
+}
+
+.effect-card,
+.texture-chip {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.effect-card:hover,
+.texture-chip:hover {
+  transform: translateY(-4px) rotate(-0.4deg);
+  box-shadow: 0 26px 45px rgba(83, 55, 35, 0.14);
+}
+
+.effect-card {
+  padding: 1rem;
+  border-radius: 24px;
+}
+
+.effect-card h3,
+.texture-chip h3 {
+  margin: 0;
+  font-size: 1.85rem;
+  line-height: 0.95;
+}
+
+.effect-card p,
+.texture-chip p {
+  margin: 0.85rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.effect-visual {
+  position: relative;
+  height: 13rem;
+  margin-bottom: 1rem;
+  border-radius: 18px;
+  background-image: var(--grain), linear-gradient(180deg, rgba(246, 234, 214, 0.96), rgba(233, 212, 181, 0.96));
+  background-size: 170px 170px, cover;
+}
+
+.effect-tag {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fffaf2;
+  background: rgba(66, 32, 23, 0.78);
+}
+
+.effect-visual::before,
+.effect-visual::after {
+  content: "";
+  position: absolute;
+}
+
+.effect-deckle .effect-visual::before {
+  inset: 1rem 1.25rem 2rem;
+  background: linear-gradient(90deg, #f9efe0, #e9d3b4);
+  clip-path: polygon(0 4%, 100% 0, 100% 84%, 92% 91%, 79% 86%, 66% 95%, 52% 87%, 37% 96%, 22% 88%, 8% 94%, 0 88%);
+}
+
+.effect-deckle .effect-visual::after {
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 2rem;
+  height: 1.2rem;
+  background: rgba(123, 78, 48, 0.14);
+  filter: blur(10px);
+}
+
+.effect-notebook .effect-visual {
+  background-image:
+    linear-gradient(90deg, rgba(199, 93, 70, 0.3), rgba(199, 93, 70, 0.3) 3px, transparent 3px),
+    repeating-linear-gradient(180deg, rgba(116, 144, 197, 0.28), rgba(116, 144, 197, 0.28) 1px, transparent 1px, transparent 1.8rem),
+    linear-gradient(180deg, #fbf2e8, #ecdcc6);
+}
+
+.effect-notebook .effect-visual::before {
+  left: 1.1rem;
+  top: 1.2rem;
+  bottom: 1.3rem;
+  width: 0.9rem;
+  background: radial-gradient(circle, rgba(157, 106, 66, 0.3) 0 35%, transparent 36%) center top / 100% 2.1rem repeat-y;
+}
+
+.effect-notebook .effect-visual::after {
+  left: 2rem;
+  right: 0.9rem;
+  bottom: 0.85rem;
+  height: 2.4rem;
+  background: linear-gradient(180deg, transparent, #f7edde 18%, #e9d7bb 100%);
+  clip-path: polygon(0 28%, 8% 0, 18% 31%, 30% 6%, 43% 35%, 58% 8%, 70% 34%, 84% 10%, 92% 33%, 100% 16%, 100% 100%, 0 100%);
+}
+
+.effect-peel .effect-visual::before {
+  inset: 1.1rem;
+  border-radius: 16px 16px 30px 16px;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 30%),
+    var(--grain),
+    linear-gradient(180deg, #f3dfbe, #dfc29b);
+  background-size: cover, 170px 170px, cover;
+}
+
+.effect-peel .effect-visual::after {
+  right: 1.1rem;
+  bottom: 1.1rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  background: linear-gradient(135deg, #fbf7ef 0 50%, rgba(160, 113, 75, 0.35) 100%);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  filter: drop-shadow(-6px -6px 7px rgba(121, 77, 50, 0.12));
+}
+
+.effect-stack .effect-visual::before {
+  inset: 1.4rem 1rem 2rem;
+  background: linear-gradient(180deg, #f7ead9, #e9d0aa);
+  box-shadow: -1.35rem 0.95rem 0 #cf8d74, 1.1rem -0.8rem 0 #f5e2bf;
+  transform: rotate(-6deg);
+}
+
+.effect-stack .effect-visual::after {
+  inset: 1.7rem 1.4rem 2.2rem;
+  background:
+    linear-gradient(180deg, rgba(58, 35, 27, 0.14), rgba(58, 35, 27, 0.14)),
+    linear-gradient(180deg, #f6ead7, #e6ceb1);
+  transform: rotate(5deg);
+  mix-blend-mode: multiply;
+}
+
+.effect-burn .effect-visual {
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(255, 224, 164, 0.35), transparent 25%),
+    linear-gradient(180deg, #dbc2a2, #b7926b);
+}
+
+.effect-burn .effect-visual::before {
+  inset: 1rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(44, 26, 18, 0.58), transparent 18%),
+    radial-gradient(circle at 80% 35%, rgba(44, 26, 18, 0.5), transparent 20%),
+    linear-gradient(180deg, rgba(42, 25, 18, 0.12), rgba(42, 25, 18, 0.4));
+  filter: blur(14px);
+}
+
+.effect-burn .effect-visual::after {
+  inset: 1.4rem;
+  border-radius: 14px;
+  border: 10px solid rgba(53, 29, 19, 0.75);
+  clip-path: polygon(0 10%, 10% 0, 100% 0, 100% 90%, 89% 100%, 0 100%);
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+.effect-fringe .effect-visual::before {
+  inset: 1.2rem;
+  background:
+    repeating-linear-gradient(90deg, rgba(240, 158, 154, 0.18) 0 0.65rem, rgba(255, 255, 255, 0.18) 0.65rem 1.3rem),
+    linear-gradient(180deg, rgba(255, 247, 237, 0.95), rgba(242, 197, 195, 0.88));
+}
+
+.effect-fringe .effect-visual::after {
+  left: 1.2rem;
+  right: 1.2rem;
+  bottom: 1rem;
+  height: 2.25rem;
+  background: repeating-linear-gradient(90deg, rgba(250, 225, 225, 0.98) 0 0.8rem, transparent 0.8rem 1rem);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 94% 100%, 88% 68%, 82% 100%, 76% 66%, 68% 100%, 61% 68%, 54% 100%, 47% 70%, 40% 100%, 32% 66%, 24% 100%, 16% 70%, 8% 100%, 0 68%);
+}
+
+.texture-chip {
+  padding: 1rem;
+  border-radius: 22px;
+}
+
+.texture-swatch {
+  height: 13rem;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+}
+
+.texture-pulp .texture-swatch {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.5) 0 1px, transparent 1px),
+    radial-gradient(circle at 75% 40%, rgba(136, 95, 62, 0.16) 0 1.2px, transparent 1.2px),
+    radial-gradient(circle at 40% 70%, rgba(104, 69, 44, 0.16) 0 1px, transparent 1px),
+    linear-gradient(180deg, #faf1e6, #ecd9bb);
+  background-size: 28px 28px, 34px 34px, 22px 22px, cover;
+}
+
+.texture-kraft .texture-swatch {
+  background:
+    repeating-linear-gradient(90deg, rgba(88, 62, 36, 0.1) 0 1px, transparent 1px 12px),
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15), transparent 22%),
+    linear-gradient(180deg, #cda16b, #a57748);
+}
+
+.texture-blueprint .texture-swatch {
+  background:
+    radial-gradient(circle at 25% 35%, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px),
+    radial-gradient(circle at 75% 65%, rgba(9, 39, 74, 0.16) 0 1px, transparent 1px),
+    linear-gradient(180deg, #c7d8e8, #89a4c0);
+  background-size: 26px 26px, 24px 24px, cover;
+}
+
+.texture-receipt .texture-swatch {
+  background:
+    repeating-linear-gradient(180deg, rgba(154, 130, 95, 0.11) 0 0.4rem, transparent 0.4rem 1.2rem),
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.55), transparent 20%),
+    linear-gradient(180deg, #fbf3e9, #ead8c1);
+}
+
+.ingredients-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: recipe;
+}
+
+.ingredients-list li {
+  padding: 1.4rem 1.2rem 1.2rem 4.5rem;
+  border-radius: 24px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.ingredients-list li::before {
+  counter-increment: recipe;
+  content: "0" counter(recipe);
+  position: absolute;
+  left: 1.2rem;
+  top: 1.2rem;
+  font-size: 1.15rem;
+  color: var(--accent-deep);
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-collage {
+    min-height: 22rem;
+  }
+
+  .effects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .textures-grid,
+  .ingredients-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .paper-site {
+    width: min(100% - 1.25rem, 1120px);
+    padding-top: 1.5rem;
+  }
+
+  .hero {
+    padding-bottom: 2.5rem;
+  }
+
+  .hero h1 {
+    max-width: none;
+  }
+
+  .hero-collage {
+    min-height: 18rem;
+  }
+
+  .scrap-a,
+  .scrap-b,
+  .scrap-c {
+    height: 8.8rem;
+  }
+
+  .effects-grid,
+  .textures-grid,
+  .ingredients-list {
+    grid-template-columns: 1fr;
+  }
+
+  .effect-card h3,
+  .texture-chip h3 {
+    font-size: 1.55rem;
+  }
+}

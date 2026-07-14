@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Torn Paper CSS Lab</title>
+    <meta
+      name="description"
+      content="A CSS-only gallery of torn paper effects, textured surfaces, and collage-inspired paper treatments."
+    />
+    <meta property="og:title" content="Torn Paper CSS Lab" />
+    <meta
+      property="og:description"
+      content="A showcase of CSS-made torn paper edges, collage layers, and tactile paper textures."
+    />
+    <meta property="og:image" content="og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Torn Paper CSS Lab" />
+    <meta
+      name="twitter:description"
+      content="A showcase of CSS-made torn paper edges, collage layers, and tactile paper textures."
+    />
+    <meta name="twitter:image" content="og.png" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="paper-site">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">CSS texture study</p>
+          <h1>Torn paper effects that feel cut, curled, and lifted off the page.</h1>
+          <p class="intro">
+            This site showcases paper edges, pulp textures, and collage layering
+            built with gradients, masks, shadows, and pseudo-elements instead of
+            image assets.
+          </p>
+        </div>
+
+        <div class="hero-collage" aria-hidden="true">
+          <div class="scrap scrap-a"><span>Deckled</span></div>
+          <div class="scrap scrap-b"><span>Fibers</span></div>
+          <div class="scrap scrap-c"><span>Peel</span></div>
+          <div class="pin"></div>
+        </div>
+      </section>
+
+      <section class="gallery-section">
+        <div class="section-heading">
+          <p class="section-label">Effect gallery</p>
+          <h2>Six approaches to tearing the edge without leaving CSS.</h2>
+        </div>
+
+        <div class="effects-grid">
+          <article class="effect-card effect-deckle">
+            <div class="effect-visual" aria-hidden="true">
+              <span class="effect-tag">Soft cotton paper</span>
+            </div>
+            <h3>Deckled Banner</h3>
+            <p>
+              Layered gradients, rough masks, and shadow stacking create a
+              hand-torn headline strip.
+            </p>
+          </article>
+
+          <article class="effect-card effect-notebook">
+            <div class="effect-visual" aria-hidden="true">
+              <span class="effect-tag">Warm ruled stock</span>
+            </div>
+            <h3>Notebook Rip</h3>
+            <p>
+              A punched binding edge and an uneven tear line turn a plain note
+              into a classroom scrap.
+            </p>
+          </article>
+
+          <article class="effect-card effect-peel">
+            <div class="effect-visual" aria-hidden="true">
+              <span class="effect-tag">Pressed matte sheet</span>
+            </div>
+            <h3>Folded Peel</h3>
+            <p>
+              Pseudo-elements fake a lifted corner, paper thickness, and a
+              slight curl without images.
+            </p>
+          </article>
+
+          <article class="effect-card effect-stack">
+            <div class="effect-visual" aria-hidden="true">
+              <span class="effect-tag">Mixed editorial cutouts</span>
+            </div>
+            <h3>Ransom Stack</h3>
+            <p>
+              Rotated strips, mismatch shadows, and grain overlays make the
+              composition feel clipped by hand.
+            </p>
+          </article>
+
+          <article class="effect-card effect-burn">
+            <div class="effect-visual" aria-hidden="true">
+              <span class="effect-tag">Charred newsprint</span>
+            </div>
+            <h3>Burnt Edge</h3>
+            <p>
+              Darkened feathered borders and ash-colored noise give the illusion
+              of singed paper fibers.
+            </p>
+          </article>
+
+          <article class="effect-card effect-fringe">
+            <div class="effect-visual" aria-hidden="true">
+              <span class="effect-tag">Translucent tissue</span>
+            </div>
+            <h3>Tissue Fringe</h3>
+            <p>
+              Repeating fringe slices, low-opacity gradients, and soft color
+              bleed mimic delicate torn layers.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="textures-section">
+        <div class="section-heading">
+          <p class="section-label">Texture shelf</p>
+          <h2>Four paper surfaces, each built from layered gradients.</h2>
+        </div>
+
+        <div class="textures-grid">
+          <article class="texture-chip texture-pulp">
+            <div class="texture-swatch" aria-hidden="true"></div>
+            <h3>Pulp Grain</h3>
+            <p>Built from stacked radial specks and low-contrast clouding.</p>
+          </article>
+
+          <article class="texture-chip texture-kraft">
+            <div class="texture-swatch" aria-hidden="true"></div>
+            <h3>Kraft Fibers</h3>
+            <p>Warm browns and vertical flecks suggest recycled paper strands.</p>
+          </article>
+
+          <article class="texture-chip texture-blueprint">
+            <div class="texture-swatch" aria-hidden="true"></div>
+            <h3>Blueprint Dust</h3>
+            <p>
+              A tinted wash and chalky noise push the texture into archival
+              territory.
+            </p>
+          </article>
+
+          <article class="texture-chip texture-receipt">
+            <div class="texture-swatch" aria-hidden="true"></div>
+            <h3>Receipt Fade</h3>
+            <p>Striped thermal banding plus pale noise sells the print-shop feel.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="recipe-section">
+        <div class="section-heading">
+          <p class="section-label">Recipe notes</p>
+          <h2>The CSS moves that make the paper feel physical.</h2>
+        </div>
+
+        <ol class="ingredients-list">
+          <li>
+            Layer repeating gradients with slightly different scales to fake
+            fiber direction.
+          </li>
+          <li>
+            Break clean edges with masks, clipped pseudo-elements, and offset
+            shadow bands.
+          </li>
+          <li>
+            Use barely-there color shifts instead of loud contrast so the paper
+            keeps its softness.
+          </li>
+          <li>
+            Stack two or three sheets with rotation changes to make the tear
+            feel tactile.
+          </li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
