@@ -1,7 +1,12 @@
 :root {
   --ink: #2f241d;
   --paper: #f4ead9;
+  --paper-2: #efe0c8;
+  --paper-3: #dfc39c;
+  --mat: #53463b;
+  --mat-2: #3e342c;
   --accent-deep: #6f2518;
+  --accent-soft: #bb7d52;
   --shadow: rgba(57, 34, 24, 0.16);
   --grain:
     radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.5) 0 1px, transparent 1px 100%),
@@ -40,17 +45,17 @@ body::before {
 .paper-site {
   position: relative;
   z-index: 1;
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 3rem 0 5rem;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2rem;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2.5rem;
   align-items: center;
-  padding: 2rem 0 4rem;
+  padding: 2rem 0 2rem;
 }
 
 .eyebrow,
@@ -69,6 +74,13 @@ body::before {
   color: var(--accent-deep);
 }
 
+.hero-kicker,
+.strip-label,
+.effect-index {
+  font-family: "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+
 .hero h1,
 .section-heading h2 {
   margin: 0;
@@ -77,20 +89,80 @@ body::before {
 }
 
 .hero h1 {
-  max-width: 11ch;
-  font-size: clamp(3.4rem, 8vw, 6.8rem);
+  max-width: 9.5ch;
+  font-size: clamp(2.9rem, 6vw, 5rem);
 }
 
 .intro {
-  max-width: 34rem;
+  max-width: 29rem;
   margin: 1.5rem 0 0;
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
   line-height: 1.55;
+}
+
+.hero-panel {
+  position: relative;
+  padding: 2rem 2rem 1.75rem;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 247, 0.94), rgba(244, 232, 216, 0.96)),
+    var(--grain);
+  box-shadow:
+    0 24px 50px rgba(74, 48, 31, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(111, 81, 57, 0.1);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero-kicker {
+  margin: 0 0 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: rgba(111, 37, 24, 0.75);
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.4rem;
+}
+
+.hero-meta span {
+  padding: 0.5rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(92, 62, 42, 0.12);
+  background: rgba(255, 250, 243, 0.9);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero-collage {
   position: relative;
-  min-height: 27rem;
+  min-height: 31rem;
+  padding: 1.5rem;
+}
+
+.collage-mat {
+  position: absolute;
+  inset: 1rem 0 2rem 5rem;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.08), transparent 16%),
+    linear-gradient(180deg, var(--mat) 0%, var(--mat-2) 100%);
+  box-shadow:
+    0 30px 65px rgba(45, 28, 18, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .scrap {
@@ -110,19 +182,19 @@ body::before {
 }
 
 .scrap-a {
-  top: 0;
-  right: 1rem;
-  width: 64%;
+  top: 2.2rem;
+  right: 0.6rem;
+  width: 72%;
   height: 14rem;
-  transform: rotate(6deg);
+  transform: rotate(5deg);
   border-radius: 18px 12px 26px 14px;
   clip-path: polygon(0 6%, 100% 0, 100% 84%, 93% 92%, 84% 87%, 72% 96%, 58% 88%, 44% 97%, 30% 89%, 14% 95%, 0 86%);
 }
 
 .scrap-b {
-  top: 8rem;
-  left: 0;
-  width: 62%;
+  top: 10.2rem;
+  left: 0.4rem;
+  width: 58%;
   height: 11.5rem;
   transform: rotate(-8deg);
   background-image:
@@ -133,11 +205,11 @@ body::before {
 }
 
 .scrap-c {
-  right: 0;
-  bottom: 0.5rem;
-  width: 56%;
-  height: 10.75rem;
-  transform: rotate(3deg);
+  right: 0.3rem;
+  bottom: 1.2rem;
+  width: 54%;
+  height: 12rem;
+  transform: rotate(2deg);
   clip-path: polygon(0 8%, 9% 0, 100% 0, 100% 100%, 92% 94%, 80% 100%, 68% 92%, 55% 100%, 42% 91%, 28% 100%, 14% 90%, 0 96%);
 }
 
@@ -154,13 +226,69 @@ body::before {
 
 .pin {
   position: absolute;
-  top: 5.5rem;
-  left: 48%;
-  width: 1.8rem;
-  height: 1.8rem;
+  top: 7rem;
+  left: 55%;
+  width: 2.3rem;
+  height: 2.3rem;
   border-radius: 999px;
   background: radial-gradient(circle at 30% 30%, #fff9ef 0, #d29a6e 35%, #8f452b 100%);
   box-shadow: 0 10px 18px rgba(83, 41, 25, 0.28);
+}
+
+.tape {
+  position: absolute;
+  width: 5.2rem;
+  height: 1.5rem;
+  background: rgba(250, 236, 202, 0.45);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(2px);
+}
+
+.tape-a {
+  top: 3.6rem;
+  right: 6.2rem;
+  transform: rotate(-8deg);
+}
+
+.tape-b {
+  bottom: 3.6rem;
+  right: 4.5rem;
+  transform: rotate(11deg);
+}
+
+.process-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0 2.5rem;
+}
+
+.process-strip article {
+  position: relative;
+  padding: 1.1rem 1.1rem 1.2rem;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(246, 234, 215, 0.96), rgba(232, 212, 183, 0.94)),
+    var(--grain);
+  box-shadow: 0 18px 38px rgba(73, 47, 31, 0.08);
+}
+
+.strip-label {
+  margin: 0 0 0.65rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: rgba(111, 37, 24, 0.72);
+}
+
+.process-strip h3 {
+  margin: 0;
+  font-size: 1.55rem;
+  line-height: 0.95;
+}
+
+.process-strip p {
+  margin: 0.8rem 0 0;
+  line-height: 1.5;
 }
 
 .gallery-section,
@@ -172,12 +300,20 @@ body::before {
 .section-heading {
   display: grid;
   gap: 0.65rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.4rem;
 }
 
 .section-heading h2 {
-  max-width: 14ch;
-  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  max-width: 11ch;
+  font-size: clamp(2.4rem, 4.8vw, 4.2rem);
+}
+
+.section-lead {
+  max-width: 42rem;
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgba(47, 36, 29, 0.82);
 }
 
 .effects-grid,
@@ -188,6 +324,7 @@ body::before {
 
 .effects-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
 }
 
 .textures-grid {
@@ -227,11 +364,28 @@ body::before {
   line-height: 0.95;
 }
 
+.effect-index {
+  margin: 0 0 0.8rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: rgba(111, 37, 24, 0.72);
+}
+
 .effect-card p,
 .texture-chip p {
   margin: 0.85rem 0 0;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+.effect-card:nth-child(2),
+.effect-card:nth-child(5) {
+  transform: rotate(-1.2deg);
+}
+
+.effect-card:nth-child(3),
+.effect-card:nth-child(6) {
+  transform: rotate(1deg);
 }
 
 .effect-visual {
@@ -452,6 +606,10 @@ body::before {
     grid-template-columns: 1fr;
   }
 
+  .process-strip {
+    grid-template-columns: 1fr;
+  }
+
   .hero-collage {
     min-height: 22rem;
   }
@@ -473,11 +631,15 @@ body::before {
   }
 
   .hero {
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .hero h1 {
     max-width: none;
+  }
+
+  .hero-panel {
+    padding: 1.5rem;
   }
 
   .hero-collage {
@@ -488,6 +650,10 @@ body::before {
   .scrap-b,
   .scrap-c {
     height: 8.8rem;
+  }
+
+  .collage-mat {
+    inset: 0.2rem 0 1rem 0;
   }
 
   .effects-grid,
